@@ -1,0 +1,356 @@
+@charset "utf-8";
+body {
+  font-family: 'Sawarabi Mincho',serif;
+  font-size: 18px;
+  color: #121212;
+}
+.ffJosefin {
+  font-family: 'Josefin Sans',sans-serif;
+}
+.innerWrap {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 80px 20px 0;
+}
+main h2 {
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: .05em;
+  margin-bottom: 80px;
+}
+header {
+  background: url(../images/hero.jpg) no-repeat right center/cover;
+}
+header .innerWrap {
+  height: 720px;
+  position: relative;
+}
+header h1 {
+  padding-top: 120px;
+}
+header .scroll {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+header .scroll img {
+  margin-top: 8px;
+}
+header nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 1240px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+.msgSec {
+  background-color: #fbfaf7;
+}
+.msgSec p {
+  text-align: center;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+.msgSec p.illust {
+  margin-top: 80px;
+  margin-bottom: 0;
+  position: relative;
+}
+.msgSec p.illust::before {
+  content: url(../images/deco_left.png);
+  position: absolute;
+  left: 320px;
+  bottom: -30px;
+}
+.msgSec p.illust::after {
+  content: url(../images/deco_right.png);
+  position: absolute;
+  right: 320px;
+  bottom: -30px;
+}
+.dateSec {
+  background-color: #ffffff;
+  padding-bottom: 120px;
+}
+.dateSec .layoutWrap {
+  display: flex;
+}
+.dateSec .layoutWrap > p {
+  flex-basis: 735px;
+}
+.dateSec .layoutWrap > div {
+  flex-basis: 465px;
+  padding-top: 100px;
+}
+.dateSec .dateDetailSec {
+  font-size: 72px;
+  margin: 0 0 170px -100px;
+  background-color: #ffffff;
+  padding: 40px 64px;
+  line-height: 1.2;
+}
+.word1 {font-size: 50px;}
+.word2 {font-size: 40px;}
+.word3 {font-size: 60px;}
+.accessSec {
+  margin-left: 48px;
+}
+.accessSec h3 {
+  color: #cfafa3;
+  font-size: 55px;
+  letter-spacing: .05em;
+  margin-bottom: 8px;
+}
+.accessSec p {
+  line-height: 1.6;
+}
+.formSec {
+  background-color: #efe8d9;
+  padding-bottom: 60px;
+}
+form {
+  width: 600px;
+  margin: 0 auto;
+}
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  width: 100%;
+  margin-top: 5px;
+  padding: 4px 8px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  vertical-align: baseline;
+  margin-right: 4px;
+}
+.attendRadio {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.attendRadio label {
+  margin: 0 20px;
+  font-size: 24px;
+}
+.allergyCheck label {
+  margin-right: 24px;
+}
+select {
+  background: #ffffff url(../images/arrow.png) no-repeat 98% 50%/17px 10px;
+}
+textarea {
+  height: 148px;
+  margin-bottom: 30px;
+}
+form > p {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.submitBtn {
+  text-align: center;
+}
+input[type="submit"] {
+  background-color: #121212;
+  color: #ffffff;
+  padding: 18px 80px;
+}
+footer {
+  background-color: #c7887f;
+  color: #f3e9e5;
+  padding: 14px 10px 20px;
+  text-align: center;
+}
+.dateSec {
+  margin-bottom: 480px;
+}
+.dateSec::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg.jpg) no-repeat center/cover;
+  z-index: -1;
+}
+
+/*メディアクエリを書いていく。
+メディアクエリとは＝この中に書いたものは、640px以下・640px以内　のデバイスだけに適用されるCSSですよって指定するのをメディアクエリという。
+　　　　　　　　　　@media screenは定型文なので覚えてしまいましょう！！
+max-width:640px＝最大が「640px」っていうことなので、640px以下にカッコ内のCSSを設定するよっていうことになる。
+　　　　　　　　　※ min-width:640px としたら、640px以上に適用されるもの。ということになる。*/
+@media screen and (max-width:640px) {
+  /*基本、PCで横並びのものはスマホでは、縦並びにする。一般的なスマホデザインっていうのは、PC版で横並びにしてあるものを
+  すべて縦並びにしていくとより見やすいデザインになる。*/
+.dateSec .layoutWrap{
+  display: block;
+  /*こちらの項目は、display: flex; で横並びにしていた。（flex ＝ 横並びにする設定）
+  スマホ版だけこのフレックスボックスを解除してあげれば、縦並びになるはず。
+  解除するCSS ＝ display: block; になる。（bllock ＝ 縦並びにする設定）
+  フレックスボックス＝横並び、ブロックボックス＝縦並び*/
+}
+.innerWrap,header nav ul,form{
+  /*「viewport」を設定したことでスマホ版に収まりきらずに全体ではみ出て表示されている。なので、今固定幅1240pxで
+  設定している箇所をスマートフォンのどんなサイズでもはみ出ないように設定する。＝可変幅に設定すればいい。
+  つまり、「何px」っていう固定幅ではなく、「100%」という風に設定してあげればどんな画面サイズでもその画面サイズの100％
+  内に収まるようにっていう風に設定されるようになる。
+  設定するのは、各sectionに「innerWrap」と設定したのを覚えていると思うが、その「innerWrap」に可変幅にしてあげれば
+  一括ですべてのセクション内が100％内に収まると思う。後は、「headerのnavのul」と、innerWrapだけでは変わらない「form」の部分になる。
+  『.innerWrap』『headerの中のnavの中のul』『form』の3か所【,（カンマ）で区切ることで複数指定できる。】*/
+  width: 100%;
+}
+header h1 img,.msgSec p.illust img,.dateSec .layoutWrap > p img{
+  /*はみ出ている画像を一括で『width: 100%;』にする。できることなら一つ一つ自分でHTMLをみて場所を確認したほうがいい。*/
+  width: 100%;
+} 
+
+/*次は葉っぱの位置を調整していく。これは単純にピクセル単位でやっているというよりかは、『befor』の疑似要素で、
+『position: absolute;』で数値でいくらでも位置を調整できるようにしたので、単純に数値を変えてあげれば内側に来る。*/
+.msgSec p.illust::before{
+  left: -16px;
+  bottom: -80px;
+  transform: scale(0.7);
+  /*『transform』プロパティっていうのは、要素を回転したり、移動したり、拡大・縮小、傾けたりできる。
+  今回は『scale(0.7)』にすることで、元のサイズより若干縮小している。*/
+  /*これで保存して更新すると葉っぱは移動する。これはちなみに、「before」の前。装飾する前と後ってお伝えしたが、
+  「before」＝前の葉っぱを移動することができた。なので次はもう一方の葉っぱを移動していきたいと思います。*/
+}
+.msgSec p.illust::after{
+  /*『before』を『after』に変えて、『left』を『right』にするだけでOK。*/
+  right: -16px;
+  bottom: -80px;
+  transform: scale(0.7);
+  /*『transform』プロパティっていうのは、要素を回転したり、移動したり、拡大・縮小、傾けたりできる。
+  今回は『scale(0.7)』にすることで、元のサイズより若干縮小している。*/
+  /*これで二つの葉っぱを位置の数値を移動させることで変更することができた。なんで『-16』なの？『-80』なの？っていうのは、何度もお伝えしている通り
+  検証ツールで移動してみてベストな位置を見つけた。*/
+
+  /*これで大体の要素をこの中に収めることができた。ここまで完成するとスマホデザインのイメージもわきやすくなったと思う。このように、スマホデザインを
+  するっていうのは新たにデザインをするっていうのではなく、あくまでもPCデザインをスマホデザインで見やすく整えてあげるっていうこと。
+  特にやることは、先ほどずれていた場所だったり、はみ出ていた場所を直していくっていうもので、非常にシンプルな操作になる。*/
+}
+
+/*細かいところを調整していく。PCデザインのフォントサイズ・余白だと大きすぎるので調整が必要になる。メインの画像だったりとかも大きすぎるので一括で指定していく。*/
+body{
+  font-size: 16px;
+}
+main h2{
+  font-size: 44px;
+  margin-bottom: 60px;
+}
+
+/*メインビジュアルの画像なんですが、ちょっとスマホ用に画像をそのまま凝縮しているのでちょっと花が大きすぎる。基本的に、PCサイズの画像を他のところみたいに100％で
+表示する方法もあるが、メインビジュアルのような背景画はどうしても、全体をカバーで覆うように設定しているので大きすぎることがある。その場合は基本的には、「スマホ用
+のサイズの画像」をあらかじめ用意しておき、書き出しておく。それを使って変更してあげるって方法をとりたいと思う。【基本、スマホ用に画像を『縦長』に書き出して準備しておくことが多い】*/
+header{
+  background: url(../images/hero_sp.jpg) no-repeat right center/cover;
+}
+/*今回は画像を変更するだけではなく、高さも指定していこうと思います。*/
+header .innerWrap{
+  height: 90vh;
+  /*今回高さを指定するのに、【height: 90vh;】とした。
+  vhとは？ ＝ 「ビューポートハイト」の略で、ビューポートの高さを意味する。わかりやすく表現すると、
+  　　　　　　　こちらの画面サイズ（iPhoneXRの画面の高さ）と同じ高さが『100vh』とする。で、その中の『90vh』だよって設定してあげると
+  　　　　　　　画面幅の『90％』だけ表示させてねって意味になる。つまり、画面の9割の高さまではこのヘッダーの背景を表示させてっていう
+  　　　　　　　設定をすることができる。なぜピクセル数値とかで高さを設定するのではなく、画面幅の90％っていうふうに設定するのかというと、
+  　　　　　　　これはレスポンシブの特徴になるが、iPhoneだけではなくたくさんの縦幅、横幅の画面サイズがあります。で、例えばこれを
+  　　　　　　　100pxっていうふうに固定値で設定してしまうと、例えばiPhoneSEみたいに縦幅が短いものだと、100pxだと長く映るが、iPhoneXR
+  　　　　　　　とか、縦幅が長いものだと逆に縦幅が短く映ってしまい、各スマホサイズによって不格好に見えてしまうことを避けるために、全ての
+  　　　　　　　スマホサイズでも必ず画面幅の、90％を占めるっていう風に設定しておけば、どの画面サイズでも同じように見える。
+  　　　　　　　このようにどの画面サイズでも対応できるように 『 vh 』 とか、『％』とかっていう、【 可変のCSS 】 をなるべく使うということを覚えておく。*/
+}
+
+/*ついでに、『headerのh1』も調整する。*/
+header h1{
+  padding-top: 80px;
+  /*上の余白を少し縮めたいので、padding-topを縮めた。*/
+}
+
+/*スマホデザインの時に手テキストがセンター寄せだと読みにくいので、『text-align: left;』にして左寄せの文章にしたいと思います。*/
+.msgSec p{
+  text-align: left;
+}
+
+/*次は、dateSecの年月日とかがはみ出ているので調整していく。でかすぎるので、フォントサイズ＝36pxくらいに小さくして、marginの余白も
+開きすぎているので、上右左下と、そろえてあげる。paddingも小さくしてあげる。あと、中の部分を『span』タグで囲ってそれぞれ小さくしていた。
+class="word1"、class="word2"、class="word3"とかで変更している。なので、こちらもそれぞれフォントサイズを指定してあげたいと思います。*/
+.dateSec .dateDetailSec{
+  font-size: 36px;
+  /*これは基本設定のフォントサイズとなる。後からspanタグで囲っているところは別に指定する。*/
+  margin: 0 0 0 25%;
+  /*どんな画面サイズになっても左が25％になるように可変で設定する。*/
+  padding: 20px 20px;
+}
+/*spanタグで囲っているward1～3についてもそれぞれフォントサイズを指定してあげる。*/
+.word1{
+  font-size: 25px;
+}
+.word2{
+  font-size: 25px;
+}
+.word3{
+  font-size: 30px;
+}
+
+/*日付の部分はPC版だと画像と重なっておしゃれになっていたので、スマホも同じように位置を調整してあげたいと思います。
+この部分は＜div＞で囲っているので、ぐっと上に持ち上げていきたいと思います。なので、padding-topを0くらいにして、
+先ほどお伝えした、transform（トランスフォーム）【変形したり位置を移動したり、縮小できると伝えた部分】を使って、Y軸を
+-50px上にあげるよっていう設定をしたいと思います。*/
+.dateSec .layoutWrap > div{
+/*『dateSec』の中の『layoutWrap』の中の『div』に対して『直接【＝ ">" この記号で直接指定している】』やっていく。*/
+  padding-top: 0;
+  transform: translateY(-50px);
+  /*『transform（トランスフォーム）: translate（トランスレイト）Y（Y軸の意味）』これで「-50px」を指定して、Y軸方向に-50px移動する。*/
+}
+
+/*だいぶ出来上がってきた。これがスマホデザインということになる。後は実践的な微調整をやっていく。女性の背景の部分が余白が開きすぎているので
+margin-bottom: 250px; 、 padding-bottom: 40px; くらいで間を狭めていきたいと思います。*/
+.dateSec{
+  padding-bottom: 40px;
+  margin-bottom: 250px;
+  /*これくらいがちょうどいいと思います。スマホデザインで縦長だが、スマホってPCよりちょっと縦長に見えるので、PCサイズの縦長をそのまま
+  やってしまうと余白が大きすぎて見えてしまうので、dateSecのmargin-bottomとpadding-bottomを下げてあげたイメージになる。*/
+}
+}
+
+/*画像の粗さを直していきたいと思います。画像の粗さを直すときは『CSSファイル』ではなく、『HTMLファイル』に記載する。HTMLに1行書くだけで出し分けができる
+魔法のようなコードになるのでぜひ覚えておいてください。
+<body>
+    <header>
+      <div class="innerWrap">
+        <h1>
+          <img src="images/hero_text.png" srcset="images/hero_text.png 1x, images/hero_text@2x.png" alt="Welcome to Our Wedding Party">
+        </h1>
+    この部分に追記してあげる。
+
+「srcset」（エスアールシーセット）と書いて、その中に出し分けする画像を呼び出していく。
+どういう指定かというと、<srcset>属性を指定することによりディスプレイの解像度別に表示する画像を出し分けることができるということ。
+srcset="images/hero_text.png 1x, ＝ 解像度「1倍」のときの画像の指定
+       images/hero_text@2x.png ＝ 解像度「2倍」の時の画像の指定 という風に、切り分ける画像を書くことで勝手に切り分けてくれる。
+画像すべてに2倍サイズの書き出したサイズの写真を用意してあるので、自身で同じように出し分けのコードを書いてみてください。そして、
+スマホの時は2倍の画像が出るように設定してみてください。
+色んなスマホのサイズで見たときに若干画像が粗いな～って思ってっしまう場合があります。そういう時はたいていの場合、画像を『1倍』と、『2倍』で書き出します。
+イラストレーターやXDなどのデザインツールを使うことが多いんですけど、デザインツールとしてその時に、『PC用』＝1倍 、 『スマホ用』＝ 2倍 サイズっていう風に
+書き出すことが多いです。なので、今回やりたいのはPCの時には、『1倍サイズ』、スマホの時には画像が高解像度の『2倍サイズ』で表示させてあげるっていうのを
+やっていきたいと思います。見本として、『h1の画像を出し分けしていきたい』と思います。*/
+
+/*例えばSEとか、めちゃくちゃ小さい、375pxで、たまにちょっと崩れたりすることがある。その場合はまた、『(max-width: 375px)』っていう風にメディアクエリを
+設定してあげて、375px以下にしか設定できないCSSを別途設定するっていう流れになります。*/
