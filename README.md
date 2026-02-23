@@ -5,9 +5,11 @@ FigmaでデザインしたOGP画像やファビコンを含め、デザインか
 柔らかい世界観と実務的なWeb制作フローを両立したデモ作品です。
 ---
 
-## 🌐 Demo  
-GitHub Pages にて公開中  
-👉 https://yurato-design.github.io/wedding-invitation/
+## 🔗 Repository
+https://github.com/yurato-design/wedding-invitation
+
+## 🌐 Demo
+https://yurato-design.github.io/wedding-invitation/
 
 ---
 
@@ -90,3 +92,4 @@ GitHub Pages にて公開中
 ## 📜 ライセンス
 本プロジェクトは個人制作のポートフォリオ用です。  
 画像素材の無断転載はご遠慮ください。
+
