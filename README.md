@@ -45,7 +45,7 @@ https://yurato-design.github.io/wedding-invitation/
 
 ## 📁 ディレクトリ構成
 ```
-/
+wedding-invitation/
 ├── index.html
 ├── 404.html
 ├── robots.txt
@@ -92,4 +92,5 @@ https://yurato-design.github.io/wedding-invitation/
 ## 📜 ライセンス
 本プロジェクトは個人制作のポートフォリオ用です。  
 画像素材の無断転載はご遠慮ください。
+
 
